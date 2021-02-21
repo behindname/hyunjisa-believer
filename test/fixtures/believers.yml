@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temple: one
+  name: MyString
+  addressProvince: 1
+  addressDetail: MyString
+  phone: MyString
+  gender: 1
+  birthday: 2021-02-21
+  registerday: 2021-02-21
+  remarks: MyText
+  ganzhi: MyString
+  dharmaName: MyString
+  email: MyString
+
+two:
+  temple: two
+  name: MyString
+  addressProvince: 1
+  addressDetail: MyString
+  phone: MyString
+  gender: 1
+  birthday: 2021-02-21
+  registerday: 2021-02-21
+  remarks: MyText
+  ganzhi: MyString
+  dharmaName: MyString
+  email: MyString

@@ -1,0 +1,77 @@
+<%= form_with(model: believer, local: true) do |form| %>
+  <% if believer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(believer.errors.count, "error") %> prohibited this believer from being saved:</h2>
+
+      <ul>
+        <% believer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :temple_id %>
+    <%= form.text_field :temple_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addressProvince %>
+    <%= form.number_field :addressProvince %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addressDetail %>
+    <%= form.text_field :addressDetail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.number_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.date_select :birthday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :registerday %>
+    <%= form.date_select :registerday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ganzhi %>
+    <%= form.text_field :ganzhi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dharmaName %>
+    <%= form.text_field :dharmaName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
