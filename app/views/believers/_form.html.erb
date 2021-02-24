@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= form.label :temple_id %>
-    <%= form.text_field :temple_id %>
+    <%= form.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]} ), 
+      	{ include_blank: "분원을 선택해주세요" }, {} %>
   </div>
 
   <div class="field">
