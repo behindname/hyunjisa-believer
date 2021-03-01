@@ -1,64 +1,83 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">신도 정보</h3>
+          <hr>
+          <p>
+            <strong>Temple:</strong>
+            <%= @believer.temple.place %>
+          </p>
 
-<p>
-  <strong>Temple:</strong>
-  <%= @believer.temple_id %>
-</p>
+          <p>
+            <strong>Name:</strong>
+            <%= @believer.name %>
+          </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @believer.name %>
-</p>
+          <p>
+            <strong>Addressprovince:</strong>
+            <%= @believer.addressProvince %>
+          </p>
 
-<p>
-  <strong>Addressprovince:</strong>
-  <%= @believer.addressProvince %>
-</p>
+          <p>
+            <strong>Addressdetail:</strong>
+            <%= @believer.addressDetail %>
+          </p>
 
-<p>
-  <strong>Addressdetail:</strong>
-  <%= @believer.addressDetail %>
-</p>
+          <p>
+            <strong>Phone:</strong>
+            <%= @believer.phone %>
+          </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @believer.phone %>
-</p>
+          <p>
+            <strong>Gender:</strong>
+            <%= @believer.gender %>
+          </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @believer.gender %>
-</p>
+          <p>
+            <strong>Birthday:</strong>
+            <%= @believer.birthday %>
+          </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @believer.birthday %>
-</p>
+          <p>
+            <strong>Registerday:</strong>
+            <%= @believer.registerday %>
+          </p>
 
-<p>
-  <strong>Registerday:</strong>
-  <%= @believer.registerday %>
-</p>
+          <p>
+            <strong>Remarks:</strong>
+            <%= @believer.remarks %>
+          </p>
 
-<p>
-  <strong>Remarks:</strong>
-  <%= @believer.remarks %>
-</p>
+          <p>
+            <strong>Ganzhi:</strong>
+            <%= @believer.ganzhi %>
+          </p>
 
-<p>
-  <strong>Ganzhi:</strong>
-  <%= @believer.ganzhi %>
-</p>
+          <p>
+            <strong>Dharmaname:</strong>
+            <%= @believer.dharmaName %>
+          </p>
 
-<p>
-  <strong>Dharmaname:</strong>
-  <%= @believer.dharmaName %>
-</p>
+          <p>
+            <strong>Email:</strong>
+            <%= @believer.email %>
+          </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @believer.email %>
-</p>
+          <div class="row justify-content-end">
+            <div class="col text-right">
+              <%= link_to '수정하기', edit_believer_path(@believer), class: "btn btn-primary" %> |
+              <%= link_to '목록으로', believers_path, class: "btn btn-secondary" %>
 
-<%= link_to 'Edit', edit_believer_path(@believer) %> |
-<%= link_to 'Back', believers_path %>
+            </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

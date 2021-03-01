@@ -1,5 +1,14 @@
-<h1>New Believer</h1>
-
-<%= render 'form', believer: @believer %>
-
-<%= link_to 'Back', believers_path %>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">새로 신도 등록하기</h1>
+          <hr>
+          <%= render 'form', believer: @believer %>
+          <%= link_to 'Back', believers_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

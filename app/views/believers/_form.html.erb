@@ -1,4 +1,5 @@
-<%= form_with(model: believer, local: true) do |form| %>
+
+<%= form_with(model: believer, local: true, class: "my-3") do |form| %>
   <% if believer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(believer.errors.count, "error") %> prohibited this believer from being saved:</h2>
@@ -11,68 +12,68 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :temple_id %>
     <%= form.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]} ), 
-      	{ include_blank: "분원을 선택해주세요" }, {} %>
+      	{ include_blank: "분원을 선택해주세요" }, { required: true, class: "form-control"} %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :addressProvince %>
-    <%= form.number_field :addressProvince %>
+  <div class="form-group">
+    <%= form.label :addressProvince %>    
+    <%= form.select :addressProvince, Believer.addressProvinces.keys.to_a, { include_blank: "지역 선택"}, { class: "form-control"} %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :addressDetail %>
-    <%= form.text_field :addressDetail %>
+    <%= form.text_field :addressDetail, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :phone %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :gender %>
-    <%= form.number_field :gender %>
+    <%= form.select :gender, Believer.genders.keys.to_a, {include_blank: "성별 선택"}, {class: "form-control"} %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
+    <%= form.date_select :birthday, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :registerday %>
-    <%= form.date_select :registerday %>
+    <%= form.date_select :registerday, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :remarks %>
-    <%= form.text_area :remarks %>
+    <%= form.text_area :remarks, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :ganzhi %>
-    <%= form.text_field :ganzhi %>
+    <%= form.text_field :ganzhi, required: true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :dharmaName %>
-    <%= form.text_field :dharmaName %>
+    <%= form.text_field :dharmaName, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary btn-block" %>
   </div>
 <% end %>
