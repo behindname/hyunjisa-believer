@@ -9,6 +9,12 @@
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="form-group">
+              <%= f.label :temple_id %>
+              <%= f.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]} ), 
+                  { include_blank: "분원을 선택해주세요" }, { class: "form-control", required: true } %>
+            </div>
+
+            <div class="form-group">
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
             </div>
@@ -34,6 +40,56 @@
             <div class="form-group">
               <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
               <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :gender %>
+              <%= f.number_field :gender, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :dharmaName %>
+              <%= f.text_field :dharmaName, class: "form-control" %>            
+            </div>
+
+            <div class="form-group">
+              <%= f.label :phone %>
+              <%= f.text_field :phone, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :birthday %>
+              <%= f.date_select :birthday, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :ganzhi %>
+              <%= f.text_field :ganzhi, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :registerday %>
+              <%= f.date_select :registerday, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :addressProvince %>
+              <%= f.number_field :addressProvince, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :addressDetail %>
+              <%= f.text_field :addressDetail, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :remarks %>
+              <%= f.text_area :remarks, class: "form-control" %>
             </div>
 
             <div class="actions">
