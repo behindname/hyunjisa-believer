@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_083211) do
+ActiveRecord::Schema.define(version: 2021_03_03_133533) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_083211) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile"
     t.index ["temple_id"], name: "index_believers_on_temple_id"
   end
 
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_083211) do
     t.text "remarks"
     t.string "ganzhi"
     t.string "dharmaName"
+    t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["temple_id"], name: "index_users_on_temple_id"

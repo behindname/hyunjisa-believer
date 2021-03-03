@@ -5,6 +5,7 @@
         <div class="card-body">
           <h3 class="card-title">신도 정보</h3>
           <hr>
+          <%= image_tag @believer.profile_path, width: 256, height: 256 %>
           <p>
             <strong>Temple:</strong>
             <%= @believer.temple.place %>

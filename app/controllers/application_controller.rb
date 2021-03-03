@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
 protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :temple_id, :addressProvince, :addressDetail, :phone, :gender, :birthday, :registerday, :remarks, :ganzhi, :dharmaName, :email, :password)}
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name,:temple_id, :addressProvince, :addressDetail, :phone, :gender, :birthday, :registerday, :remarks, :ganzhi, :dharmaName, :email, :password, :current_password)}
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :temple_id, :profile, :addressProvince, :addressDetail, :phone, :gender, :birthday, :registerday, :remarks, :ganzhi, :dharmaName, :email, :password)}
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name,:temple_id, :profile, :addressProvince, :addressDetail, :phone, :gender, :birthday, :registerday, :remarks, :ganzhi, :dharmaName, :email, :password, :current_password)}
   end
 end

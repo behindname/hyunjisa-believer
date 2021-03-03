@@ -15,6 +15,11 @@
             </div>
 
             <div class="form-group">
+              <%= f.label :profile %>
+              <%= f.file_field :profile, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
             </div>
@@ -33,8 +38,8 @@
             </div>
 
             <div class="form-group">
-              <%= f.label :gender %>
-              <%= f.number_field :gender, class: "form-control" %>
+              <%= f.label :gender %>              
+              <%= f.select :gender, User.genders.keys.to_a, { include_blank: "성별 선택" }, { class: "form-control" } %>
             </div>
 
             <div class="form-group">
@@ -60,6 +65,21 @@
             <div class="form-group">
               <%= f.label :registerday %>
               <%= f.date_select :registerday, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :addressProvince %>
+              <%= f.select :addressProvince, User.addressProvinces.keys.to_a, { include_blank: "지역 선택"}, { class: "form-control"} %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :addressDetail %>
+              <%= f.text_field :addressDetail, class: "form-control" %>
             </div>
 
             <div class="form-group">

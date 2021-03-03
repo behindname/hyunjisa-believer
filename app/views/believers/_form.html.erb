@@ -14,8 +14,14 @@
 
   <div class="form-group">
     <%= form.label :temple_id %>
-    <%= form.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]} ), 
+    <%= form.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]}, form.object.temple_id ), 
       	{ include_blank: "분원을 선택해주세요" }, { required: true, class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :profile %>
+    <%= image_tag form.object.profile_path, width: 128, height: 128 if form.object.profile.present? %>
+    <%= form.file_field :profile, class: "form-control" %>
   </div>
 
   <div class="form-group">
