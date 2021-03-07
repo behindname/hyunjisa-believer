@@ -12,7 +12,7 @@ class BelieversController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-          render pdf: "Believer No. #{@believer.id}",
+          render pdf: "Believer No.#{@believer.id}",
           page_size: 'A4',
           template: "believers/show.pdf.erb",
           layout: "pdf.html",

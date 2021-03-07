@@ -3,7 +3,8 @@
   <head>
     <meta charset='utf-8'/>
     <title>PDFs - Ruby on Rails</title>
-    <%= wicked_pdf_stylesheet_link_tag "believer" %>
+    <%= wicked_pdf_stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" %>
+    <%= wicked_pdf_javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" %>
     <%= wicked_pdf_javascript_include_tag "number_pages" %>
   </head>
   <body onload='number_pages'>

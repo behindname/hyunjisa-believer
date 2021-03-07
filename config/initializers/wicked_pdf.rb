@@ -25,5 +25,6 @@ WickedPdf.config = {
   # 'xvfb-run' command, in order to simulate an X server.
   enable_local_file_access: true,
   print_media_type: true,
+  disable_smart_shrinking: true,
   # use_xvfb: true,
 }

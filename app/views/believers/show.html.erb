@@ -68,7 +68,7 @@
 
           <div class="row justify-content-end">
             <div class="col text-right">
-              <%= link_to 'PDF 보기', believer_path(@believer, format: :pdf), class: "btn btn-success" %> | 
+              <%= link_to 'PDF 보기', believer_path(@believer, format: :pdf), class: "btn btn-success", target: :_blank %> | 
               <%= link_to '수정하기', edit_believer_path(@believer), class: "btn btn-primary" %> |
               <%= link_to '목록으로', believers_path, class: "btn btn-secondary" %>
             </div>
