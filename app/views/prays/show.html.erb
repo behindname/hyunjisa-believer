@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Temple:</strong>
+  <%= @pray.temple_id %>
+</p>
+
+<p>
+  <strong>Buddha:</strong>
+  <%= @pray.buddha_id %>
+</p>
+
+<p>
+  <strong>Believer:</strong>
+  <%= @pray.believer_id %>
+</p>
+
+<p>
+  <strong>Donator:</strong>
+  <%= @pray.donator %>
+</p>
+
+<p>
+  <strong>Prayerrelation:</strong>
+  <%= @pray.prayerRelation %>
+</p>
+
+<p>
+  <strong>Prayername:</strong>
+  <%= @pray.prayerName %>
+</p>
+
+<p>
+  <strong>Prayerbirthyear:</strong>
+  <%= @pray.prayerBirthyear %>
+</p>
+
+<p>
+  <strong>Prayeraddress:</strong>
+  <%= @pray.prayerAddress %>
+</p>
+
+<p>
+  <strong>Prayerphone:</strong>
+  <%= @pray.prayerPhone %>
+</p>
+
+<p>
+  <strong>Startday:</strong>
+  <%= @pray.startDay %>
+</p>
+
+<p>
+  <strong>Finishday:</strong>
+  <%= @pray.finishDay %>
+</p>
+
+<p>
+  <strong>Fullpayday:</strong>
+  <%= @pray.fullPayDay %>
+</p>
+
+<p>
+  <strong>Isprayfinished:</strong>
+  <%= @pray.isPrayFinished %>
+</p>
+
+<p>
+  <strong>Isfinishconfirmed:</strong>
+  <%= @pray.isFinishConfirmed %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @pray.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_pray_path(@pray) %> |
+<%= link_to 'Back', prays_path %>

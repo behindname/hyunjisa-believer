@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_133533) do
+ActiveRecord::Schema.define(version: 2021_03_07_035804) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -57,6 +57,29 @@ ActiveRecord::Schema.define(version: 2021_03_03_133533) do
     t.index ["temple_id"], name: "index_believers_on_temple_id"
   end
 
+  create_table "prays", force: :cascade do |t|
+    t.integer "temple_id", null: false
+    t.integer "buddha_id", null: false
+    t.integer "believer_id", null: false
+    t.string "donator"
+    t.string "prayerRelation"
+    t.string "prayerName"
+    t.string "prayerBirthyear"
+    t.string "prayerAddress"
+    t.string "prayerPhone"
+    t.date "startDay"
+    t.date "finishDay"
+    t.date "fullPayDay"
+    t.boolean "isPrayFinished"
+    t.boolean "isFinishConfirmed"
+    t.text "remarks"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["believer_id"], name: "index_prays_on_believer_id"
+    t.index ["buddha_id"], name: "index_prays_on_buddha_id"
+    t.index ["temple_id"], name: "index_prays_on_temple_id"
+  end
+
   create_table "temples", force: :cascade do |t|
     t.string "place"
     t.integer "position"
@@ -90,5 +113,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_133533) do
   end
 
   add_foreign_key "believers", "temples"
+  add_foreign_key "prays", "believers"
+  add_foreign_key "prays", "buddhas"
+  add_foreign_key "prays", "temples"
   add_foreign_key "users", "temples"
 end

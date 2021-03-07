@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temple: one
+  buddha: one
+  believer: one
+  donator: MyString
+  prayerRelation: MyString
+  prayerName: MyString
+  prayerBirthyear: MyString
+  prayerAddress: MyString
+  prayerPhone: MyString
+  startDay: 2021-03-07
+  finishDay: 2021-03-07
+  fullPayDay: 2021-03-07
+  isPrayFinished: false
+  isFinishConfirmed: false
+  remarks: MyText
+
+two:
+  temple: two
+  buddha: two
+  believer: two
+  donator: MyString
+  prayerRelation: MyString
+  prayerName: MyString
+  prayerBirthyear: MyString
+  prayerAddress: MyString
+  prayerPhone: MyString
+  startDay: 2021-03-07
+  finishDay: 2021-03-07
+  fullPayDay: 2021-03-07
+  isPrayFinished: false
+  isFinishConfirmed: false
+  remarks: MyText

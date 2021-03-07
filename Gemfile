@@ -31,6 +31,8 @@ gem 'font-awesome-rails'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -1,0 +1,92 @@
+<%= form_with(model: pray, local: true) do |form| %>
+  <% if pray.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pray.errors.count, "error") %> prohibited this pray from being saved:</h2>
+
+      <ul>
+        <% pray.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :temple_id %>
+    <%= form.text_field :temple_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buddha_id %>
+    <%= form.text_field :buddha_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :believer_id %>
+    <%= form.text_field :believer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :donator %>
+    <%= form.text_field :donator %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prayerRelation %>
+    <%= form.text_field :prayerRelation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prayerName %>
+    <%= form.text_field :prayerName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prayerBirthyear %>
+    <%= form.text_field :prayerBirthyear %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prayerAddress %>
+    <%= form.text_field :prayerAddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prayerPhone %>
+    <%= form.text_field :prayerPhone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startDay %>
+    <%= form.date_select :startDay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finishDay %>
+    <%= form.date_select :finishDay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fullPayDay %>
+    <%= form.date_select :fullPayDay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isPrayFinished %>
+    <%= form.check_box :isPrayFinished %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isFinishConfirmed %>
+    <%= form.check_box :isFinishConfirmed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
