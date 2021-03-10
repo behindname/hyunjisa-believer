@@ -1,6 +1,66 @@
 ---
 ko:
   activerecord:
+    attributes:
+      user:
+        email: 이메일
+        name: 이름
+        temple_id: 분원
+        addressProvince: 지역
+        addressDetail: 상세주소
+        phone: 전화번호
+        gender: 성별
+        birthday: 생년월일
+        registerday: 등록일자
+        dharmaName: 불명
+        ganzhi: 생년(간지)
+        profile: 프로필
+        remarks: 비고
+      believer:
+        temple_id: 분원
+        name: 이름
+        addressProvince: 지역
+        addressDetail: 상세주소
+        phone: 전화번호
+        gender: 성별
+        birthday: 생년월일
+        registerday: 등록일자
+        dharmaName: 불명
+        ganzhi: 생년(간지)
+        profile: 프로필
+        remarks: 비고
+        email: 이메일
+      temple:
+        place: 분원 지역
+        position: 순서
+      pray:
+        temple_id: 분원
+        buddha_id: 부처님
+        believer_id: 신청자
+        donator: 입금자
+        prayerRelation: 신청자와의 관계
+        prayerName: 입재자 성함
+        prayerBirthYear: 입재자 생년(간지)
+        prayerAddress: 입재자 주소
+        prayerPhone: 입재자 연락처
+        startDay: 입재일
+        finishDay: 회향일
+        fullPayDay: 완납일
+        isPrayFinished: 회향 여부
+        isFinishConfirmed: 회향 확정 여부
+        remarks: 비고
+
+
+
+
+
+
+    models:
+      user: 사용자
+      temple: 분원
+      believer: 신도
+      pray: 기도
+
     errors:
       messages:
         record_invalid: 데이터 검증에 실패하였습니다. %{errors}

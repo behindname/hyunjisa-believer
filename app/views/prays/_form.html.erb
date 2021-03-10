@@ -1,4 +1,4 @@
-<%= form_with(model: pray, local: true) do |form| %>
+<%= form_with(model: pray, local: true, class: "my-3") do |form| %>
   <% if pray.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pray.errors.count, "error") %> prohibited this pray from being saved:</h2>
@@ -11,82 +11,83 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :temple_id %>
-    <%= form.text_field :temple_id %>
+    <%= form.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]}, form.object.temple_id ), 
+      	{ include_blank: "분원을 선택해주세요" }, { required: true, class: "form-control"} %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :buddha_id %>
     <%= form.text_field :buddha_id %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :believer_id %>
     <%= form.text_field :believer_id %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :donator %>
-    <%= form.text_field :donator %>
+    <%= form.text_field :donator, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :prayerRelation %>
-    <%= form.text_field :prayerRelation %>
+    <%= form.text_field :prayerRelation, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :prayerName %>
-    <%= form.text_field :prayerName %>
+    <%= form.text_field :prayerName, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :prayerBirthyear %>
     <%= form.text_field :prayerBirthyear %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :prayerAddress %>
-    <%= form.text_field :prayerAddress %>
+    <%= form.text_field :prayerAddress, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :prayerPhone %>
-    <%= form.text_field :prayerPhone %>
+    <%= form.text_field :prayerPhone, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :startDay %>
-    <%= form.date_select :startDay %>
+    <%= form.date_select :startDay, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :finishDay %>
-    <%= form.date_select :finishDay %>
+    <%= form.date_select :finishDay, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :fullPayDay %>
-    <%= form.date_select :fullPayDay %>
+    <%= form.date_select :fullPayDay, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :isPrayFinished %>
     <%= form.check_box :isPrayFinished %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :isFinishConfirmed %>
     <%= form.check_box :isFinishConfirmed %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :remarks %>
-    <%= form.text_area :remarks %>
+    <%= form.text_area :remarks, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary btn-block" %>
   </div>
 <% end %>

@@ -1,5 +1,16 @@
-<h1>New Pray</h1>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">새로 기도 등록하기</h1>
+          <hr>
+          <%= render 'form', pray: @pray %>
+          <%= link_to 'Back', prays_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', pray: @pray %>
 
-<%= link_to 'Back', prays_path %>

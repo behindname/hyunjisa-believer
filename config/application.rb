@@ -12,6 +12,7 @@ module HyunjisaBeliever
     config.load_defaults 6.0
     config.i18n.default_locale = :ko
     config.timezone = 'Seoul'
+    config.encoding = 'utf-8'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

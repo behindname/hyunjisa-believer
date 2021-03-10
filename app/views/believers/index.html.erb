@@ -1,7 +1,7 @@
 <div class="container my-3">
   <div class="row">
     <div class="col-12">
-      <h1>Believers</h1>
+      <h1>신도 목록</h1>
       <table class="table">
         <thead>
           <tr>
@@ -26,7 +26,7 @@
               <td><%= believer.phone %></td>
               <td><%= link_to 'Show', believer %></td>
               <td><%= link_to 'Edit', edit_believer_path(believer) %></td>
-              <td><%= link_to 'Destroy', believer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Destroy', believer, method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' } %></td>
             </tr>
           <% end %>
         </tbody>

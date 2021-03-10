@@ -1,6 +1,17 @@
-<h1>Editing Pray</h1>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">기도 정보 수정</h1>
+          <hr>
+          <%= render 'form', pray: @pray %>
+          <%= link_to 'Show', @pray, class: "btn btn-info" %> |
+          <%= link_to 'Back', prays_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', pray: @pray %>
 
-<%= link_to 'Show', @pray %> |
-<%= link_to 'Back', prays_path %>

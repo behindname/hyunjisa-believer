@@ -1,55 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-12">
+    <h1>기도 목록</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">분원</th>
+          <th scope="col">부처님</th>
+          <th scope="col">신청자(신도)</th>
+          <th scope="col">입재자</th>
+          <th scope="col">생년(간지)</th>
+          <th scope="col">입재자 주소</th>      
+          <th scope="col">입재일</th>
+          <th scope="col">회향일</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<h1>Prays</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Temple</th>
-      <th>Buddha</th>
-      <th>Believer</th>
-      <th>Donator</th>
-      <th>Prayerrelation</th>
-      <th>Prayername</th>
-      <th>Prayerbirthyear</th>
-      <th>Prayeraddress</th>
-      <th>Prayerphone</th>
-      <th>Startday</th>
-      <th>Finishday</th>
-      <th>Fullpayday</th>
-      <th>Isprayfinished</th>
-      <th>Isfinishconfirmed</th>
-      <th>Remarks</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @prays.each do |pray| %>
-      <tr>
-        <td><%= pray.temple_id %></td>
-        <td><%= pray.buddha_id %></td>
-        <td><%= pray.believer_id %></td>
-        <td><%= pray.donator %></td>
-        <td><%= pray.prayerRelation %></td>
-        <td><%= pray.prayerName %></td>
-        <td><%= pray.prayerBirthyear %></td>
-        <td><%= pray.prayerAddress %></td>
-        <td><%= pray.prayerPhone %></td>
-        <td><%= pray.startDay %></td>
-        <td><%= pray.finishDay %></td>
-        <td><%= pray.fullPayDay %></td>
-        <td><%= pray.isPrayFinished %></td>
-        <td><%= pray.isFinishConfirmed %></td>
-        <td><%= pray.remarks %></td>
-        <td><%= link_to 'Show', pray %></td>
-        <td><%= link_to 'Edit', edit_pray_path(pray) %></td>
-        <td><%= link_to 'Destroy', pray, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Pray', new_pray_path %>
+      <tbody>
+        <% @prays.each do |pray| %>
+          <tr>
+            <td><%= pray.temple_id %></td>
+            <td><%= pray.buddha_id %></td>
+            <td><%= pray.believer_id %></td>
+            <td><%= pray.prayerName %></td>
+            <td><%= pray.prayerBirthyear %></td>
+            <td><%= pray.prayerAddress %></td>
+            <td><%= pray.startDay %></td>
+            <td><%= pray.finishDay %></td> 
+            <td><%= link_to 'Show', pray %></td>
+            <td><%= link_to 'Edit', edit_pray_path(pray) %></td>
+            <td><%= link_to 'Destroy', pray, method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4 text-right">
+      <%= link_to 'New Pray', new_pray_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
