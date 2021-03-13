@@ -5,6 +5,7 @@ class BelieversController < ApplicationController
   # GET /believers or /believers.json
   def index
     @believers = Believer.all
+    @believers = @believers.ransack(name_or_dharmaName_or_ganzhi_or_addressDetail_or_phone_cont: params[:q]).result(distinct: true) if params[:q].present?
   end
 
   # GET /believers/1 or /believers/1.json

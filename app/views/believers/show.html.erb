@@ -5,70 +5,80 @@
         <div class="card-body">
           <h3 class="card-title">신도 정보</h3>
           <hr>
-          <%= image_tag @believer.profile_path, width: 256, height: 256 %>
-          <p>
-            <strong>Temple:</strong>
-            <%= @believer.temple.place %>
-          </p>
-
-          <p>
-            <strong>Name:</strong>
-            <%= @believer.name %>
-          </p>
-
-          <p>
-            <strong>Addressprovince:</strong>
-            <%= @believer.addressProvince %>
-          </p>
-
-          <p>
-            <strong>Addressdetail:</strong>
-            <%= @believer.addressDetail %>
-          </p>
-
-          <p>
-            <strong>Phone:</strong>
-            <%= @believer.phone %>
-          </p>
-
-          <p>
-            <strong>Gender:</strong>
-            <%= @believer.gender %>
-          </p>
-
-          <p>
-            <strong>Birthday:</strong>
-            <%= @believer.birthday %>
-          </p>
-
-          <p>
-            <strong>Registerday:</strong>
-            <%= @believer.registerday %>
-          </p>
-
-          <p>
-            <strong>Remarks:</strong>
-            <%= @believer.remarks %>
-          </p>
-
-          <p>
-            <strong>Ganzhi:</strong>
-            <%= @believer.ganzhi %>
-          </p>
-
-          <p>
-            <strong>Dharmaname:</strong>
-            <%= @believer.dharmaName %>
-          </p>
-
-          <p>
-            <strong>Email:</strong>
-            <%= @believer.email %>
-          </p>
-
+          <div class="row">
+            <div class="col-4 mt-3">
+              <%= link_to @believer.profile.url, target: "_blank" do %>
+                <%= image_tag @believer.profile_path, width: "100%" %>
+               <% end %>
+            </div>
+            <div class="col-8">
+              <h5 class="card-title">인적 사항</h5>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="col">생년</th>
+                    <td><%= @believer.ganzhi %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">이름</th>
+                    <td><%= @believer.name %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">연락처</th>
+                    <td><%= @believer.phone %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">소속분원</th>                    
+                    <td><%= @believer.temple.place %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <h5 class="card-title">상세 정보</h5>
+          <div class="row no-gutters">
+            <div class="col-6">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="col">성별</th>
+                    <td><%= @believer.gender %></td>
+                  </tr>                  
+                  <tr>
+                    <th scope="col">지역</th>
+                    <td><%= @believer.addressProvince %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">상세주소</th>
+                    <td><%= @believer.addressDetail %></td>
+                  </tr>                  
+                </tbody>
+              </table>
+            </div>
+            <div class="col-6">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="col">이메일</th>
+                    <td><%= @believer.email %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">생년월일</th>
+                    <td><%= @believer.birthday %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">등록일</th>
+                    <td><%= @believer.registerday %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <h5 class="card-title">비고</h5><hr>
+          <p class="card-text"><%= @believer.remarks %></p>
           <div class="row justify-content-end">
             <div class="col text-right">
-              <%= link_to 'PDF 보기', believer_path(@believer, format: :pdf), class: "btn btn-success", target: :_blank %> | 
+              <%= link_to '출력하기', believer_path(@believer, format: :pdf), class: "btn btn-success", target: :_blank %> | 
               <%= link_to '수정하기', edit_believer_path(@believer), class: "btn btn-primary" %> |
               <%= link_to '목록으로', believers_path, class: "btn btn-secondary" %>
             </div>

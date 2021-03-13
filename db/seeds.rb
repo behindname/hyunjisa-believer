@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 # AdminUser.create!(email: 'behindname@naver.com', password: 'qjqghkrud1!', password_confirmation: 'qjqghkrud1!')
 
 
@@ -22,4 +22,4 @@ def generate_temples
   end
 end
 
-generate_temples
+# generate_temples

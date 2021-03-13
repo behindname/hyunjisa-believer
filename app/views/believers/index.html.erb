@@ -1,7 +1,15 @@
 <div class="container my-3">
   <div class="row">
     <div class="col-12">
-      <h1>신도 목록</h1>
+      <h1 class="mt-3">신도 목록</h1>
+      <div class="row mb-3 justify-content-end">
+        <div class="col-auto pr-3">
+          <%= form_with url: believers_path, method: :get, local: true, html: {class: "form-inline"} do |f| %>
+            <%= f.text_field :q, class: "form-control mr-1" %>
+            <%= f.submit '검색', class: 'btn btn-success' %>              
+          <% end %>
+        </div>
+      </div>
       <table class="table">
         <thead>
           <tr>
