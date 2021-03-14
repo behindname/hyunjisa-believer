@@ -19,22 +19,19 @@
 
   <div class="form-group">
     <%= form.label :buddha_id %>
-    <%= form.text_field :buddha_id %>
+    <%= form.select :buddha_id, options_for_select(Buddha.order(:position).map{|buddha|[buddha.name, buddha.id]}, form.object.buddha_id), 
+    { include_blank: "어느 부처님께 기도하시겠습니까?" }, { required: true, class: "form-control" } %>
   </div>
 
   <div class="form-group">
     <%= form.label :believer_id %>
-    <%= form.text_field :believer_id %>
+    <%= form.select :believer_id, options_for_select(Believer.all.map{|believer|[believer.name, believer.id]}, form.object.believer_id),
+    { include_blank: "신청자(신도)를 입력해주세요" }, { required: true, class: "form-control" } %>
   </div>
 
   <div class="form-group">
     <%= form.label :donator %>
     <%= form.text_field :donator, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :prayerRelation %>
-    <%= form.text_field :prayerRelation, class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -44,7 +41,12 @@
 
   <div class="form-group">
     <%= form.label :prayerBirthyear %>
-    <%= form.text_field :prayerBirthyear %>
+    <%= form.text_field :prayerBirthyear, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :prayerRelation %>
+    <%= form.text_field :prayerRelation, class: "form-control" %>
   </div>
 
   <div class="form-group">
@@ -59,17 +61,17 @@
 
   <div class="form-group">
     <%= form.label :startDay %>
-    <%= form.date_select :startDay, class: "form-control" %>
+    <%= form.date_field :startDay, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= form.label :finishDay %>
-    <%= form.date_select :finishDay, class: "form-control" %>
+    <%= form.date_field :finishDay, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= form.label :fullPayDay %>
-    <%= form.date_select :fullPayDay, class: "form-control" %>
+    <%= form.date_field :fullPayDay, class: "form-control" %>
   </div>
 
   <div class="form-group">

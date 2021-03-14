@@ -40,7 +40,7 @@ ko:
         donator: 입금자
         prayerRelation: 신청자와의 관계
         prayerName: 입재자 성함
-        prayerBirthYear: 입재자 생년(간지)
+        prayerBirthyear: 입재자 생년(간지)
         prayerAddress: 입재자 주소
         prayerPhone: 입재자 연락처
         startDay: 입재일

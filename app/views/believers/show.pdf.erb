@@ -33,11 +33,11 @@
                   </tr>
                   <tr>
                     <th scope="col">성별</th>
-                    <td><%= @believer.gender %></td>
+                    <td><%= @believer.enum_ko(:gender) %></td>
                   </tr>                  
                   <tr>
                     <th scope="col">지역</th>
-                    <td><%= @believer.addressProvince %></td>
+                    <td><%= @believer.enum_ko(:addressProvince) %></td>
                   </tr>
                   <tr>
                     <th scope="col">상세주소</th>

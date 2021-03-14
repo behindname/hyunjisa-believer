@@ -9,7 +9,7 @@
             <div class="col-4 mt-3">
               <%= link_to @believer.profile.url, target: "_blank" do %>
                 <%= image_tag @believer.profile_path, width: "100%" %>
-               <% end %>
+              <% end %>
             </div>
             <div class="col-8">
               <h5 class="card-title">인적 사항</h5>
@@ -82,8 +82,7 @@
               <%= link_to '수정하기', edit_believer_path(@believer), class: "btn btn-primary" %> |
               <%= link_to '목록으로', believers_path, class: "btn btn-secondary" %>
             </div>
-          </div>         
-
+          </div>
         </div>
       </div>
     </div>

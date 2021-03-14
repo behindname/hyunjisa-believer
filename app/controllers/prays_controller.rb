@@ -1,4 +1,5 @@
 class PraysController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pray, only: %i[ show edit update destroy ]
 
   # GET /prays or /prays.json
@@ -8,6 +9,17 @@ class PraysController < ApplicationController
 
   # GET /prays/1 or /prays/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Pray No.#{@pray.id}",
+        page_size: 'A4',
+        template: "prays/show.pdf.erb",
+        layout: "pdf.html",
+        zoom: 1,
+        dpi: 75
+      end
+    end
   end
 
   # GET /prays/new
