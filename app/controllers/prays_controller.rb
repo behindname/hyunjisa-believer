@@ -9,6 +9,8 @@ class PraysController < ApplicationController
 
   # GET /prays/1 or /prays/1.json
   def show
+    @current_request = @pray.pray_requests.order(created_at: :desc).first if @pray.pray_requests.any?
+    @recent_donations = @pray.pray_donations.first(10)
     respond_to do |format|
       format.html
       format.pdf do
@@ -76,6 +78,10 @@ class PraysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pray_params
-      params.require(:pray).permit(:temple_id, :buddha_id, :believer_id, :donator, :prayerRelation, :prayerName, :prayerBirthyear, :prayerAddress, :prayerPhone, :startDay, :finishDay, :fullPayDay, :isPrayFinished, :isFinishConfirmed, :remarks)
+      params.require(:pray).permit(:temple_id, :buddha_id, :believer_id, :donator, 
+        :prayerRelation, :prayerName, :prayerBirthyear, :prayerAddress, :prayerPhone, 
+        :startDay, :finishDay, :fullPayDay, :isPrayFinished, :isFinishConfirmed, :remarks,
+        pray_requests_attributes:[:id, :pray_id, :requestDay, :request, :remarks], 
+        pray_donations_attributes:[:id, :_destroy, :pray_id, :donateDay, :donation, :remarks])
     end
 end

@@ -29,11 +29,15 @@
     { include_blank: "신청자(신도)를 입력해주세요" }, { required: true, class: "form-control" } %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :donator %>
-    <%= form.text_field :donator, class: "form-control" %>
-  </div>
+  <%= form.fields_for :pray_requests, @pray.pray_requests.build do |r| %>
+    <div class="form-group">
+      <%= r.label :request %>
+      <%= r.text_area :request, class: "form-control" %>
+      <%= r.hidden_field :requestDay, value: Date.today %>
+    </div>
+  <% end %>
 
+  <h5 class="mt-5">*입재자 정보</h5><hr>
   <div class="form-group">
     <%= form.label :prayerName %>
     <%= form.text_field :prayerName, class: "form-control" %>
@@ -74,14 +78,23 @@
     <%= form.date_field :fullPayDay, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :isPrayFinished %>
-    <%= form.check_box :isPrayFinished %>
-  </div>
+  <% if form.object.new_record? %>
+    <h5 class="mt-5">*첫 기도비 입금 내역</h5><hr>
+    <%= form.fields_for :pray_donations, @pray.pray_donations.build do |d| %>
+      <div class="form-group">
+        <%= d.label :donation %>
+        <%= d.number_field :donation, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= d.label :donateDay %>
+        <%= d.date_field :donateDay, class: "form-control" %>
+      </div>
+    <% end %>
+  <% end %>
 
   <div class="form-group">
-    <%= form.label :isFinishConfirmed %>
-    <%= form.check_box :isFinishConfirmed %>
+    <%= form.label :donator %>
+    <%= form.text_field :donator, class: "form-control" %>
   </div>
 
   <div class="form-group">

@@ -3,9 +3,11 @@
 one:
   pray: one
   donateDay: 2021-03-17
+  donation: 1
   remarks: MyString
 
 two:
   pray: two
   donateDay: 2021-03-17
+  donation: 1
   remarks: MyString

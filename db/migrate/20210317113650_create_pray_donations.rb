@@ -1,8 +1,9 @@
-class CreatePrayDonationHistories < ActiveRecord::Migration[6.0]
+class CreatePrayDonations < ActiveRecord::Migration[6.0]
   def change
-    create_table :pray_donation_histories do |t|
+    create_table :pray_donations do |t|
       t.references :pray, null: false, foreign_key: true
       t.date :donateDay
+      t.integer :donation
       t.string :remarks
 
       t.timestamps

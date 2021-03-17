@@ -49,6 +49,14 @@ ko:
         isPrayFinished: 회향 여부
         isFinishConfirmed: 회향 확정 여부
         remarks: 비고
+      pray_request:
+        requestDay: 발원일
+        request: 발원 내용
+        remarks: 비고
+      pray_donation:
+        donateDay: 입금일
+        donation: 기도비
+        remarks: 비고
 
     models:
       user: 사용자

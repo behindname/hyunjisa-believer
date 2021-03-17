@@ -3,6 +3,10 @@ class Pray < ApplicationRecord
   belongs_to :buddha
   belongs_to :believer
 
-  has_many :pray_request_histories, dependent: :destroy
-  has_many :pray_donation_histories, dependent: :nullify
+  has_many :pray_requests, dependent: :destroy
+  has_many :pray_donations, dependent: :nullify
+
+  accepts_nested_attributes_for :pray_requests, reject_if: proc { |attributes| attributes['request'].blank? }
+  accepts_nested_attributes_for :pray_donations, reject_if: proc { |attributes| attributes['donation'].blank? }, allow_destroy: true
+
 end
