@@ -1,101 +1,129 @@
 <div class="container my-3">
   <div class="row">
-    <div class="col-md-8 mx-auto">
-      <div class="card">
-        <div class="card-body">
-          <h3 class="card-title">입재 기도</h3>
-          <hr>
-          <div class="row">
-            <div class="col-4 mt-3">
-              <% if @pray.believer && @pray.believer.profile.present? %>
-                <%= link_to @pray.believer.profile.url, target: "_blank" do %>
-                  <%= image_tag @pray.believer.profile_path, width: "100%" %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="col-8">
-              <h5 class="card-title">등록 사항</h5>
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th scope="col">부처님</th>
-                    <td><%= @pray.buddha&.name %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">접수분원</th>
-                    <td><%= @pray.temple&.place %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">신청자</th>
-                    <td><%= @pray.believer&.name %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">입재자</th>
-                    <td><%= @pray.prayerName %></td>
-                  </tr>
-                </tbody>
-              </table>
+    <div class="col">
+      <h3 class="card-title">입재 기도</h3>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="col-4 mt-3">
+          <% if @pray.believer && @pray.believer.profile.present? %>
+            <%= link_to @pray.believer.profile.url, target: "_blank" do %>
+              <%= image_tag @pray.believer.profile_path, width: "100%" %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="col-8">
+          <h5 class="card-title">등록 사항</h5>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="col">부처님</th>
+                <td><%= @pray.buddha&.name %></td>
+              </tr>
+              <tr>
+                <th scope="col">접수분원</th>
+                <td><%= @pray.temple&.place %></td>
+              </tr>
+              <tr>
+                <th scope="col">신청자</th>
+                <td><%= @pray.believer&.name %></td>
+              </tr>
+              <tr>
+                <th scope="col">입재자</th>
+                <td><%= @pray.prayerName %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h5 class="card-title">상세 정보</h5>
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="col">입재자 생년</th>
+                <td><%= @pray.prayerBirthyear %></td>
+              </tr>
+              <tr>
+                <th scope="col">신청자와의 관계</th>
+                <td><%= @pray.prayerRelation %></td>
+              </tr>
+              <tr>
+                <th scope="col">입재자 연락처</th>
+                <td><%= @pray.prayerPhone %></td>
+              </tr>
+              <tr>
+                <th scope="col">입재자 주소</th>
+                <td><%= @pray.prayerAddress %></td>
+              </tr>
+              <tr>
+                <th scope="col">입금자</th>
+                <td><%= @pray.donator %></td>
+              </tr>
+              <tr>
+                <th scope="col">입재일</th>
+                <td><%= @pray.startDay %></td>
+              </tr>
+              <tr>
+                <th scope="col">회향(예정)일</th>
+                <td><%= @pray.finishDay %></td>
+              </tr>
+              <tr>
+                <th scope="col">완납일</th>
+                <td><%= @pray.fullPayDay %></td>
+              </tr>
+              <tr>
+                <th scope="col">회향여부</th>
+                <td><%= @pray.isPrayFinished %></td>
+              </tr>
+              <tr>
+                <th scope="col">회향확정여부</th>
+                <td><%= @pray.isFinishConfirmed %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>      
+    </div>
+    <div class="col-6">
+      <h5 class="card-title">발원 내용</h5>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">              
+              <h6 class="card-subtitle mb-2 text-muted">발원일 : </h6>
+              <p class="card-text">
+                현지궁 현지사 정법 이 사바세계에서 흥왕케 도와주십시오
+              </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
           <h5 class="card-title">상세 정보</h5>
           <div class="row">
-            <div class="col-12">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th scope="col">입재자 생년</th>
-                    <td><%= @pray.prayerBirthyear %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">신청자와의 관계</th>
-                    <td><%= @pray.prayerRelation %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">입재자 연락처</th>
-                    <td><%= @pray.prayerPhone %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">입재자 주소</th>
-                    <td><%= @pray.prayerAddress %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">입금자</th>
-                    <td><%= @pray.donator %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">입재일</th>
-                    <td><%= @pray.startDay %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">회향(예정)일</th>
-                    <td><%= @pray.finishDay %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">완납일</th>
-                    <td><%= @pray.fullPayDay %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">회향여부</th>
-                    <td><%= @pray.isPrayFinished %></td>
-                  </tr>
-                  <tr>
-                    <th scope="col">회향확정여부</th>
-                    <td><%= @pray.isFinishConfirmed %></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <h5 class="card-title">비고</h5><hr>
-          <p class="card-text"><%= @pray.remarks %></p>
-          <div class="row justify-content-end">
-            <div class="col text-right">
-              <%= link_to '출력하기', pray_path(@pray, format: :pdf), class: "btn btn-success", target: :_blank %> | 
-              <%= link_to '수정하기', edit_pray_path(@pray), class: "btn btn-primary" %> |
-              <%= link_to '목록으로', prays_path, class: "btn btn-secondary" %>
-            </div>
-          </div>
+            <table class="table">
 
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h5 class="card-title">비고</h5><hr>
+      <p class="card-text"><%= @pray.remarks %></p><hr>
+      <div class="row justify-content-end">        
+        <div class="col text-right">
+          <%= link_to '출력하기', pray_path(@pray, format: :pdf), class: "btn btn-success", target: :_blank %> | 
+          <%= link_to '수정하기', edit_pray_path(@pray), class: "btn btn-primary" %> |
+          <%= link_to '목록으로', prays_path, class: "btn btn-secondary" %>
         </div>
       </div>
     </div>

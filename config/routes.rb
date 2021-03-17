@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :believers
-  resources :prays
+  resources :prays do
+    resources :pray_request_histories
+    resources :pray_donation_histories
+  end
 
 
 end

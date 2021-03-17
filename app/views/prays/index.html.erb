@@ -12,7 +12,7 @@
           <th scope="col">생년(간지)</th>
           <th scope="col">입재일</th>
           <th scope="col">회향일</th>
-          <th colspan="3"></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -27,8 +27,7 @@
             <td><%= pray.startDay %></td>
             <td><%= pray.finishDay %></td>
             <td><%= link_to 'Show', pray %></td>
-            <td><%= link_to 'Edit', edit_pray_path(pray) %></td>
-            <td><%= link_to 'Destroy', pray, method: :delete, data: { confirm: '정말로 삭제하시겠습니까?' } %></td>
+            <td><%= link_to 'Edit', edit_pray_path(pray) %></td>            
           </tr>
         <% end %>
       </tbody>

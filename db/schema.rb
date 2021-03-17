@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_070216) do
+ActiveRecord::Schema.define(version: 2021_03_17_031243) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -62,6 +62,24 @@ ActiveRecord::Schema.define(version: 2021_03_14_070216) do
     t.integer "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pray_donation_histories", force: :cascade do |t|
+    t.integer "pray_id", null: false
+    t.date "donateDay"
+    t.string "remarks"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pray_id"], name: "index_pray_donation_histories_on_pray_id"
+  end
+
+  create_table "pray_request_histories", force: :cascade do |t|
+    t.integer "pray_id", null: false
+    t.date "requestDay"
+    t.text "request"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pray_id"], name: "index_pray_request_histories_on_pray_id"
   end
 
   create_table "prays", force: :cascade do |t|
@@ -120,6 +138,8 @@ ActiveRecord::Schema.define(version: 2021_03_14_070216) do
   end
 
   add_foreign_key "believers", "temples"
+  add_foreign_key "pray_donation_histories", "prays"
+  add_foreign_key "pray_request_histories", "prays"
   add_foreign_key "prays", "believers"
   add_foreign_key "prays", "buddhas"
   add_foreign_key "prays", "temples"
