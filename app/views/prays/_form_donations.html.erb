@@ -12,22 +12,16 @@
   <% end %>
 
   <h5 class="mt-3">기도비 입금 내역</h5><hr>
-  <%= form.fields_for :pray_donations do |d| %>
-    <div class="row mb-3">
-      <div class="col-3">
-        <%= d.label :donation if d.index == 0 %>
-        <%= d.number_field :donation, class: "form-control" %>
-      </div>
-      <div class="col-3">
-        <%= d.label :donateDay if d.index == 0 %>
-        <%= d.date_field :donateDay, class: "form-control" %>
-      </div>
-      <div class="col-6">
-        <%= d.label :remarks if d.index == 0 %>
-        <%= d.text_area :remarks, class: "form-control" %>
-      </div>
+  <div id="pray_donations">
+    <%= form.fields_for :pray_donations do |donation| %>
+      <%= render "prays/pray_donation_fields", f: donation %>
+    <% end %>
+    <div class="links mb-3">
+      <i class="fa fa-plus-circle">
+        <%= link_to_add_association '기도비 추가', form, :pray_donations %>
+      </i>
     </div>
-  <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit class: "btn btn-primary btn-block" %>

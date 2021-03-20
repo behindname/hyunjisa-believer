@@ -33,6 +33,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'wicked_pdf'
 # gem 'wkhtmltopdf-binary'
+gem 'cocoon'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

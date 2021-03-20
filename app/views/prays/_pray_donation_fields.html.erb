@@ -1,0 +1,17 @@
+<div class="row mb-3 nested-fields">
+  <div class="col-3 field">
+    <%= f.label :donateDay if f.index == 0 %>
+    <%= f.date_field :donateDay, class: "form-control" %>
+  </div>
+  <div class="col-3 field">
+    <%= f.label :donation if f.index == 0 %>
+    <%= f.number_field :donation, class: "form-control" %>
+  </div>
+  <div class="col-5 field">
+    <%= f.label :remarks if f.index == 0 %>
+    <%= f.text_area :remarks, class: "form-control" %>
+  </div>
+  <div class="col-1">    
+    <%= link_to_remove_association "삭제", f %>    
+  </div>
+</div>

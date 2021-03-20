@@ -82,12 +82,12 @@
     <h5 class="mt-5">*첫 기도비 입금 내역</h5><hr>
     <%= form.fields_for :pray_donations, @pray.pray_donations.build do |d| %>
       <div class="form-group">
-        <%= d.label :donation %>
-        <%= d.number_field :donation, class: "form-control" %>
-      </div>
-      <div class="form-group">
         <%= d.label :donateDay %>
         <%= d.date_field :donateDay, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= d.label :donation %>
+        <%= d.number_field :donation, class: "form-control" %>
       </div>
     <% end %>
   <% end %>

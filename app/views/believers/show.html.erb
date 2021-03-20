@@ -6,12 +6,12 @@
           <h3 class="card-title">신도 정보</h3>
           <hr>
           <div class="row">
-            <div class="col-4 mt-3">
+            <div class="col-md-4 mt-3">
               <%= link_to @believer.profile.url, target: "_blank" do %>
                 <%= image_tag @believer.profile_path, width: "100%" %>
               <% end %>
             </div>
-            <div class="col-8">
+            <div class="col-md-8">
               <h5 class="card-title">인적 사항</h5>
               <table class="table">
                 <tbody>
@@ -37,7 +37,7 @@
           </div>
           <h5 class="card-title">상세 정보</h5>
           <div class="row no-gutters">
-            <div class="col-6">
+            <div class="col-md-6">
               <table class="table">
                 <tbody>
                   <tr>
@@ -55,7 +55,7 @@
                 </tbody>
               </table>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <table class="table">
                 <tbody>
                   <tr>
