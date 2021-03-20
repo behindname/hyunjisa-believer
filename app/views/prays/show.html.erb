@@ -117,7 +117,7 @@
               <h5 class="card-title">기도비 납부 내역</h5>
             </div>
             <div class="col-auto">
-              <%= link_to "편집하기", donations_pray_path(@pray), class: "btn btn-success btn-sm" %>
+              <%= link_to "편집하기", edit_pray_path(@pray, mode: :donations), class: "btn btn-success btn-sm" %>
             </div>
           </div>          
           <div class="row">
@@ -138,7 +138,6 @@
                   </tr>
                 <% end %>
               </tbody>
-
             </table>
           </div>
         </div>

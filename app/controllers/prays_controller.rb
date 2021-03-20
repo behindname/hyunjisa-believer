@@ -10,7 +10,7 @@ class PraysController < ApplicationController
   # GET /prays/1 or /prays/1.json
   def show
     @current_request = @pray.pray_requests.order(created_at: :desc).first if @pray.pray_requests.any?
-    @recent_donations = @pray.pray_donations.first(10)
+    @recent_donations = @pray.pray_donations.last(10)
     respond_to do |format|
       format.html
       format.pdf do
@@ -31,6 +31,7 @@ class PraysController < ApplicationController
 
   # GET /prays/1/edit
   def edit
+    @edit_donations = (params[:mode] == "donations")
   end
 
   # POST /prays or /prays.json
@@ -70,9 +71,6 @@ class PraysController < ApplicationController
     end
   end
 
-  def donations
-    @donations = @pray.pray_donations
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
