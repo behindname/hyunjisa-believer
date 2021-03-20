@@ -1,0 +1,50 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col">
+      <h3 class="card-title"><%= @pray.prayerName %>님의 기도</h3>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center">발원 기록</h4>
+          <hr>
+          <div class="row">
+            <div class="col-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">발원일</th>
+                    <th scope="col">발원 내용</th>
+                    <th scope="col">비고</th>
+                    <th colspan="1"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @pray_requests.each do |pray_request| %>
+                    <tr>
+                      <th scope="row"><%= pray_request.requestDay %></th>
+                      <td><%= pray_request.request %></td>
+                      <td><%= pray_request.remarks %></td>
+                      <td><%= link_to '보기', pray_request %></td>                      
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-4 text-right">
+              <%= link_to '새로 발원 입력하기', new_pray_pray_request_path(@pray), class: "btn btn-primary" %> | 
+              <%= link_to '기도 정보로', @pray, class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,34 @@
+<% url ||= nil %>
+<% method ||= nil %>
+<%= form_with(model: pray_request, url: url, method: method, local: true) do |form| %>
+  <% if pray_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pray_request.errors.count, "error") %> prohibited this pray_request from being saved:</h2>
+
+      <ul>
+        <% pray_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :requestDay %>
+    <%= form.date_field :requestDay, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :request %>
+    <%= form.text_area :request, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success btn-block" %>
+  </div>
+<% end %>

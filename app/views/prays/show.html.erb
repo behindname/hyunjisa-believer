@@ -90,7 +90,14 @@
       </div>      
     </div>
     <div class="col-6">
-      <h5 class="card-title">발원 내용</h5>
+      <div class="row justify-content-between">
+        <div class="col-auto mr-auto">
+          <h5 class="card-title">발원 내용</h5>
+        </div>
+        <div class="col-auto">
+          <%= link_to "발원 기록", pray_pray_requests_path(@pray), class: "btn btn-info btn-sm" %>
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <div class="card">
@@ -110,7 +117,7 @@
               <h5 class="card-title">기도비 납부 내역</h5>
             </div>
             <div class="col-auto">
-              <%= link_to "편집하기", pray_pray_donations_path(@pray), class: "btn btn-success btn-sm" %>
+              <%= link_to "편집하기", donations_pray_path(@pray), class: "btn btn-success btn-sm" %>
             </div>
           </div>          
           <div class="row">

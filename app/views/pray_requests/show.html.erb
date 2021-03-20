@@ -1,0 +1,35 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col">
+      <h3 class="card-title"><%= @pray.prayerName %>님의 기도</h3>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">발원</h4>
+          <h6 class="card-subtitle mb-2 text-muted">발원일 : <%= @pray_request.requestDay %></h6>
+          <hr>
+          <p class="card-text"><%= @pray_request.request %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3 justify-content-between">
+    <div class="col-4 text-left">
+      <%= link_to '수정하기', edit_pray_request_path(@pray_request), class: "btn btn-warning" %> |
+      <%= link_to '삭제하기', pray_request_path(@pray_request), method: :delete, data: {confirm: "정말로 삭제하시겠습니까?"}, class: "btn btn-danger" %>
+    </div>
+    <div class="col-4 text-right">
+      <%= link_to '목록', pray_pray_requests_path(@pray), class: "btn btn-info" %> | 
+      <%= link_to '기도정보', @pray, class: "btn btn-success" %>
+    </div>
+  </div>  
+</div>
+
+
+
+
+

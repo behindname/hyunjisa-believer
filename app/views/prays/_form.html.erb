@@ -31,8 +31,8 @@
 
   <%= form.fields_for :pray_requests, @pray.pray_requests.build do |r| %>
     <div class="form-group">
-      <%= r.label :request %>
-      <%= r.text_area :request, class: "form-control" %>
+      <%= r.label :request %>      
+      <%= r.text_area :request, placeholder: @pray.pray_requests.first.request, class: "form-control" %>
       <%= r.hidden_field :requestDay, value: Date.today %>
     </div>
   <% end %>

@@ -1,6 +1,6 @@
 class PraysController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_pray, only: %i[ show edit update destroy ]
+  before_action :set_pray, only: %i[ show edit update destroy donations]
 
   # GET /prays or /prays.json
   def index
@@ -68,6 +68,10 @@ class PraysController < ApplicationController
       format.html { redirect_to prays_url, notice: "Pray was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def donations
+    @donations = @pray.pray_donations
   end
 
   private

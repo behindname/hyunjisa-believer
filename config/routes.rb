@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :believers
   resources :prays do
-    resources :pray_requests
-    resources :pray_donations
+    resources :pray_requests, only: %i[index create new]
+    member do
+      get :donations
+    end
   end
 
+  resources :pray_requests, except: %i[index create new]
 
 end
