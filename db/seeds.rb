@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-# AdminUser.create!(email: 'behindname@naver.com', password: 'qjqghkrud1!', password_confirmation: 'qjqghkrud1!')
+AdminUser.create!(email: 'behindname@naver.com', password: 'qjqghkrud1!', password_confirmation: 'qjqghkrud1!') unless AdminUser.find_by(email: 'behindname@naver.com')
 
 
 BUDDHA_LIST = ["석가모니불", "문수보살", "보현보살", "다보여래불", "준제보살", "약사여래불", "아미타불",  
@@ -29,5 +29,5 @@ def generate_temples
   end
 end
 
-# generate_buddhas
-# generate_temples
+generate_buddhas
+generate_temples
