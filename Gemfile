@@ -34,7 +34,7 @@ gem 'mini_magick'
 gem 'wicked_pdf'
 # gem 'wkhtmltopdf-binary'
 gem 'cocoon'
-gem 'mini_racer'
+gem 'mini_racer' unless Gem.win_platform?
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
