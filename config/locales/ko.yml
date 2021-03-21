@@ -57,6 +57,19 @@ ko:
         donateDay: 입금일
         donation: 기도비
         remarks: 비고
+      offering:
+        temple_id: 분원
+        buddha_id: 부처님
+        believer_id: 신청자
+        donator: 입금자
+        offerorRelation: 신청자와의 관계
+        offerorName: 복위자 성함
+        offerorBirthyear: 복위자 생년(간지)
+        offerorAddress: 복위자 주소
+        offerorPhone: 복위자 연락처
+        offerDay: 공양일
+        remarks: 비고
+        request: 발원 내용
 
     models:
       user: 사용자

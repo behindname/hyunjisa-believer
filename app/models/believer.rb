@@ -6,4 +6,7 @@ class Believer < ApplicationRecord
 
   belongs_to :temple, optional: true
   
+  has_many :prays
+  has_many :offerings
+  
 end

@@ -1,0 +1,88 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">공양 기록</h3>
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="col">공양 분원</th>
+                    <td><%= @offering.temple&.place %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">부처님</th>
+                    <td><%= @offering.buddha&.name %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">접수 신도</th>
+                    <td><%= @offering.believer&.name %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-md-6">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="col">복위자</th>
+                    <td><%= @offering.offerorName %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">생년(간지)</th>
+                    <td><%= @offering.offerorBirthyear %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">신도와의 관계</th>
+                    <td><%= @offering.offerorRelation %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="col">복위자 주소</th>
+                    <td><%= @offering.offerorAddress %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">연락처</th>
+                    <td><%= @offering.offerorPhone %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">발원 내용</th>
+                    <td><%= @offering.request %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">공양일</th>
+                    <td><%= @offering.offerDay %></td>
+                  </tr>
+                  <tr>
+                    <th scope="col">입금자</th>
+                    <td><%= @offering.donator %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <h5 class="card-title">비고</h5><hr>
+          <p class="card-text"><%= @offering.remarks %></p>
+          <div class="row justify-content-end">
+            <div class="col text-right">
+              <!--< %= link_to '출력하기', believer_path(@believer, format: :pdf), class: "btn btn-success", target: :_blank %> | -->
+              <%= link_to '수정하기', edit_offering_path(@offering), class: "btn btn-primary" %> |
+              <%= link_to '목록으로', offerings_path, class: "btn btn-secondary" %>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

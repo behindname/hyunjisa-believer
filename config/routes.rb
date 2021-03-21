@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :prays do
     resources :pray_requests, only: %i[index create new]
   end
-
   resources :pray_requests, except: %i[index create new]
+  
+  resources :offerings
 
 end

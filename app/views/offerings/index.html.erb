@@ -1,0 +1,40 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-12">
+    <h1>공양 목록</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">분원</th>
+          <th scope="col">부처님</th>
+          <th scope="col">신청자(신도)</th>
+          <th scope="col">복위자</th>
+          <th scope="col">생년(간지)</th>
+          <th scope="col">공양일</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @offerings.each do |offering| %>
+          <tr>
+            <td><%= offering.temple&.place %></td>
+            <td><%= offering.buddha&.name %></td>
+            <td><%= offering.believer&.name %></td>
+            <td><%= offering.offerorName %></td>
+            <td><%= offering.offerorBirthyear %></td>
+            <td><%= offering.offerDay %></td>
+            <td><%= link_to 'Show', offering %></td>
+            <td><%= link_to 'Edit', edit_offering_path(offering) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4 text-right">
+      <%= link_to 'New Offering', new_offering_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

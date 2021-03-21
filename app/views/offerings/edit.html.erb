@@ -1,0 +1,15 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">공양 정보 수정하기</h1>
+          <hr>
+          <%= render 'form', offering: @offering %>
+          <%= link_to 'Show', @offering, class: "btn btn-info" %> |
+          <%= link_to 'Back', offerings_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

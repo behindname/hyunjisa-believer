@@ -1,0 +1,82 @@
+<%= form_with(model: offering, local: true, class: "my-3") do |form| %>
+  <% if offering.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(offering.errors.count, "error") %> prohibited this offering from being saved:</h2>
+
+      <ul>
+        <% offering.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :temple_id %>
+    <%= form.select :temple_id, options_for_select( Temple.order(:position).map{|temple|[temple.place, temple.id]}, form.object.temple_id ), 
+      	{ include_blank: "분원을 선택해주세요" }, { required: true, class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :buddha_id %>
+    <%= form.select :buddha_id, options_for_select(Buddha.order(:position).map{|buddha|[buddha.name, buddha.id]}, form.object.buddha_id), 
+    { include_blank: "어느 부처님께 기도하시겠습니까?" }, { required: true, class: "form-control" } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :believer_id %>
+    <%= form.select :believer_id, options_for_select(Believer.all.map{|believer|[believer.name, believer.id]}, form.object.believer_id),
+    { include_blank: "신청자(신도)를 입력해주세요" }, { required: true, class: "form-control" } %>
+  </div>
+  
+  <h5 class="mt-5">*복위자 정보</h5><hr>
+
+  <div class="form-group">
+    <%= form.label :offerorRelation %>
+    <%= form.text_field :offerorRelation, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :offerorName %>
+    <%= form.text_field :offerorName, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :offerorBirthyear %>
+    <%= form.text_field :offerorBirthyear, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :offerorAddress %>
+    <%= form.text_field :offerorAddress, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :offerorPhone %>
+    <%= form.text_field :offerorPhone, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :offerDay %>
+    <%= form.date_field :offerDay, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :request %>
+    <%= form.text_area :request, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :donator %>
+    <%= form.text_field :donator, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>

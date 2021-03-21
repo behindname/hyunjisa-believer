@@ -34,7 +34,7 @@ class BelieversController < ApplicationController
 
   # POST /believers or /believers.json
   def create
-    @believer = believer.new(believer_params)
+    @believer = Believer.new(believer_params)
 
     respond_to do |format|
       if @believer.save

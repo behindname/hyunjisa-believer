@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temple: one
+  buddha: one
+  believer: one
+  donator: MyString
+  offerorRelation: MyString
+  offerorName: MyString
+  offerorBirthyear: MyString
+  offerorAddress: MyString
+  offerorPhone: MyString
+  offerDay: 2021-03-21
+  request: MyText
+  remarks: MyText
+
+two:
+  temple: two
+  buddha: two
+  believer: two
+  donator: MyString
+  offerorRelation: MyString
+  offerorName: MyString
+  offerorBirthyear: MyString
+  offerorAddress: MyString
+  offerorPhone: MyString
+  offerDay: 2021-03-21
+  request: MyText
+  remarks: MyText
