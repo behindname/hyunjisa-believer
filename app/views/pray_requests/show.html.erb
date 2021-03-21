@@ -23,8 +23,8 @@
       <%= link_to '삭제하기', pray_request_path(@pray_request), method: :delete, data: {confirm: "정말로 삭제하시겠습니까?"}, class: "btn btn-danger" %>
     </div>
     <div class="col-4 text-right">
-      <%= link_to '목록', pray_pray_requests_path(@pray), class: "btn btn-info" %> | 
-      <%= link_to '기도정보', @pray, class: "btn btn-success" %>
+      <%= link_to '발원 기록으로', pray_pray_requests_path(@pray), class: "btn btn-info" %> | 
+      <%= link_to '기도 정보로', @pray, class: "btn btn-success" %>
     </div>
   </div>  
 </div>

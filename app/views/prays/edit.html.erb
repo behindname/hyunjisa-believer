@@ -1,6 +1,6 @@
 <div class="container my-3">
   <div class="row">
-    <div class="col-md-12">
+    <div class="<%= @edit_donations ? 'col-md-12' : 'col-md-8 mx-auto' %>">
       <div class="card">
         <div class="card-body">
           <h1 class="card-title"><%= !@edit_donations ? "기도 정보 수정" : "기도비 관리" %></h1>
