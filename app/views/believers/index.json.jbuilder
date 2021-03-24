@@ -1,1 +1,4 @@
-json.array! @believers, partial: "believers/believer", as: :believer
+json.array! @believers do |believer|
+  json.id believer.id
+  json.text believer.name
+end

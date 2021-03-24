@@ -5,7 +5,12 @@ class BelieversController < ApplicationController
   # GET /believers or /believers.json
   def index
     @believers = Believer.all
-    @believers = @believers.ransack(name_or_dharmaName_or_ganzhi_or_addressDetail_or_phone_cont: params[:q]).result(distinct: true) if params[:q].present?
+    if params[:q].present?
+      @believers = @believers.ransack(name_or_dharmaName_or_ganzhi_or_addressDetail_or_phone_cont: params[:q]).result(distinct: true)
+    elsif params[:search].present?
+      #For select2 f.select search
+      @believers = Believer.ransack(name_cont: params[:search].to_s.strip).result.limit(5)
+    end
   end
 
   # GET /believers/1 or /believers/1.json
