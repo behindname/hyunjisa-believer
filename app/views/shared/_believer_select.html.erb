@@ -1,0 +1,29 @@
+<div class="form-group">
+  <%= form.label :believer_id %>
+  <% if form.object.new_record? %>
+    <%= form.select :believer_id, [], { include_blank: "신도 이름으로 검색해주세요" }, { required: true, class: "select-believer form-control" } %>
+  <% else %>
+    <%= form.select :believer_id, [[ form.object.believer.name, form.object.believer.id]], {}, { required: true, class: "select-believer form-control" } %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $('.select-believer').select2({
+    ajax: {
+      url: "/believers.json", //URL for searching believers
+      dataType: "json",
+      delay: 200,
+      data: function(params) {
+        return {
+          search: params.term, //params send to believers controller
+        };
+      },
+      processResults: function(data){
+        return {
+          results: data
+        };
+      },
+      cache: true
+    },
+  });
+</script>

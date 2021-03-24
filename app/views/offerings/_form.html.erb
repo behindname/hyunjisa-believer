@@ -23,11 +23,7 @@
     { include_blank: "어느 부처님께 기도하시겠습니까?" }, { required: true, class: "form-control" } %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :believer_id %>
-    <%= form.select :believer_id, options_for_select(Believer.all.map{|believer|[believer.name, believer.id]}, form.object.believer_id),
-    { include_blank: "신청자(신도)를 입력해주세요" }, { required: true, class: "form-control" } %>
-  </div>
+  <%= render "shared/believer_select", form: form %>
   
   <h5 class="mt-5">*복위자 정보</h5><hr>
 
