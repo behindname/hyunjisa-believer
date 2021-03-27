@@ -1,0 +1,36 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>신도 가족 목록</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">신도</th>
+            <th scope="col">구성원수</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @families.each do |family| %>
+            <tr>
+              <td><%= family.name %></td>
+              <td><%= family.family_members.size %></td>
+              <td><%= link_to 'Show', family %></td>        
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4 text-right">
+      <%= link_to '가족 새로 만들기', new_family_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

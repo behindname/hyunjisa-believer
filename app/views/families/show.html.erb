@@ -1,0 +1,42 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"><%= @family.name %></h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>이름</th>
+                <th>관계</th>
+                <th>생년월일</th>
+                <th>간지</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @family.family_members.each do |member| %>
+                <tr>
+                  <td><%= member.name %></td>
+                  <td><%= member.relation %></td>
+                  <td><%= member.birthday %></td>
+                  <td><%= member.ganzhi %></td>
+                  <td><%= member.remarks %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="row justify-content-end">
+            <div class="col-4 text-right">
+              <%= link_to '수정하기', edit_family_path(@family), class: "btn btn-primary" %> |
+              <%= link_to '목록으로', families_path, class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

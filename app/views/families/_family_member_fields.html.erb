@@ -1,0 +1,26 @@
+<div class="row mb-3 nested-fields">
+  <div class="col field">
+    <%= f.label :name if f.index == 0 %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="col field">
+    <%= f.label :relation if f.index == 0 %>
+    <%= f.text_field :relation, class: "form-control" %>
+  </div>
+  <div class="col field">
+    <%= f.label :birthday if f.index == 0 %>
+    <%= f.date_field :birthday, class: "form-control" %>
+  </div>
+  <div class="col field">
+    <%= f.label :ganzhi if f.index == 0 %>
+    <%= f.text_field :ganzhi, class: "form-control" %>
+  </div>
+  <div class="col field">
+    <%= f.label :remarks if f.index == 0 %>
+    <%= f.text_field :remarks, class: "form-control" %>
+  </div>
+  <div class="col">
+    <% if f.index == 0 %><br><% end %>
+    <%= link_to_remove_association "삭제", f %>
+  </div>
+</div>

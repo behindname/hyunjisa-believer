@@ -41,7 +41,10 @@
       </table>
     </div>
   </div>
-  <div class="row justify-content-end">
+  <div class="row justify-content-between">
+    <div class="col-4">
+      <%= link_to '가족 관리 페이지', families_path, class: "btn btn-dark" %>
+    </div>
     <div class="col-4 text-right">
       <%= link_to '신도 새로 입력', new_believer_path, class: "btn btn-primary" %>
     </div>

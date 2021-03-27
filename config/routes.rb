@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :believers
+  resources :families
+
   resources :prays do
     resources :pray_requests, only: %i[index create new]
   end

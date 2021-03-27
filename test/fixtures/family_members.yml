@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  family: one
+  relation: MyString
+  name: MyString
+  birthday: 2021-03-27
+  ganzhi: MyString
+  remarks: MyText
+
+two:
+  family: two
+  relation: MyString
+  name: MyString
+  birthday: 2021-03-27
+  ganzhi: MyString
+  remarks: MyText

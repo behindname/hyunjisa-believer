@@ -49,6 +49,7 @@ ko:
         isPrayFinished: 회향 여부
         isFinishConfirmed: 회향 확정 여부
         remarks: 비고
+        family_id: 가족
       pray_request:
         requestDay: 발원일
         request: 발원 내용
@@ -70,6 +71,15 @@ ko:
         offerDay: 공양일
         remarks: 비고
         request: 발원 내용
+      family:
+        main_believer_id: 주신도
+        name: 이름
+      family_member:
+        name: 이름
+        relation: 관계
+        birthday: 생년월일
+        ganzhi: 생년(간지)
+        remarks: 비고        
 
     models:
       user: 사용자
