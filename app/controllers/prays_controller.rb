@@ -4,7 +4,7 @@ class PraysController < ApplicationController
 
   # GET /prays or /prays.json
   def index
-    @prays = Pray.all
+    @prays = Pray.all.page( params[:page] )
   end
 
   # GET /prays/1 or /prays/1.json
@@ -70,7 +70,6 @@ class PraysController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

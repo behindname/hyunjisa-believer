@@ -4,7 +4,7 @@ class FamiliesController < ApplicationController
 
   # GET /families or /families.json
   def index
-    @families = Family.all
+    @families = Family.all.page( params[:page] )
   end
 
   # GET /families/1 or /families/1.json
@@ -19,15 +19,16 @@ class FamiliesController < ApplicationController
 
   # GET /families/1/edit
   def edit
-    @main_believer = Believer.find(@family.main_believer_id)
+    set_main_believer
   end
 
   # POST /families or /families.json
   def create
     @family = Family.new(family_params)
-
+    set_main_believer
+    
     respond_to do |format|
-      if @family.save
+      if @family.save && @main_believer.save
         format.html { redirect_to @family, notice: "Family was successfully created." }
         format.json { render :show, status: :created, location: @family }
       else
@@ -39,8 +40,9 @@ class FamiliesController < ApplicationController
 
   # PATCH/PUT /families/1 or /families/1.json
   def update
+    set_main_believer    
     respond_to do |format|
-      if @family.update(family_params)
+      if @family.update(family_params) && @main_believer.save
         format.html { redirect_to @family, notice: "Family was successfully updated." }
         format.json { render :show, status: :ok, location: @family }
       else
@@ -63,6 +65,13 @@ class FamiliesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_family
       @family = Family.find(params[:id])
+    end
+
+    def set_main_believer
+      if @family.present?
+        @main_believer = Believer.find(@family.main_believer_id)
+        @main_believer.family = @family
+      end
     end
 
     # Only allow a list of trusted parameters through.

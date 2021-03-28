@@ -75,7 +75,36 @@
             </div>
           </div>
           <h5 class="card-title">비고</h5><hr>
-          <p class="card-text"><%= @believer.remarks %></p>
+          <p class="card-text"><%= @believer.remarks %></p>          
+          <div class="row mt-3">
+            <div class="col-12">
+              <% if @family.present? %>
+                <h5 class="card-title">가족 사항</h5>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>이름</th>
+                      <th>관계</th>
+                      <th>생년월일</th>
+                      <th>간지</th>
+                      <th>비고</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @family.family_members.each do |member| %>
+                      <tr>
+                        <td><%= member.name %></td>
+                        <td><%= member.relation %></td>
+                        <td><%= member.birthday %></td>
+                        <td><%= member.ganzhi %></td>
+                        <td><%= member.remarks %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              <% end %>
+            </div>
+          </div>
           <div class="row justify-content-end">
             <div class="col text-right">
               <%= link_to '출력하기', believer_path(@believer, format: :pdf), class: "btn btn-success", target: :_blank %> | 

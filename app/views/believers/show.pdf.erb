@@ -62,7 +62,34 @@
                 </tbody>
               </table>
             </div>
-          </div>          
+          </div>
+          <% if @family.present? %>
+            <div class="row">
+              <div class="col-12">
+                <h5 class="card-title">가족 사항</h5>
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th>이름</th>
+                      <th>관계</th>                      
+                      <th>간지</th>
+                      <th>비고</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @family.family_members.each do |member| %>
+                      <tr>
+                        <td><%= member.name %></td>
+                        <td><%= member.relation %></td>                        
+                        <td><%= member.ganzhi %></td>
+                        <td><%= member.remarks %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

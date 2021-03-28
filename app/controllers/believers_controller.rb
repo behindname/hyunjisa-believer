@@ -10,7 +10,9 @@ class BelieversController < ApplicationController
     elsif params[:search].present?
       #For select2 f.select search
       @believers = Believer.ransack(name_cont: params[:search].to_s.strip).result.limit(5)
+      return
     end
+    @believers = @believers.page( params[:page] )
   end
 
   # GET /believers/1 or /believers/1.json
@@ -78,6 +80,7 @@ class BelieversController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_believer
       @believer = Believer.find(params[:id])
+      @family = @believer.family
     end
 
     # Only allow a list of trusted parameters through.
