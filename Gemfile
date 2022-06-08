@@ -38,6 +38,7 @@ gem 'mini_racer' unless Gem.win_platform?
 gem 'ransack'
 gem "select2-rails"
 gem 'kaminari'
+gem 'faker'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
