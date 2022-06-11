@@ -122,7 +122,7 @@ def generate_prays
         break
       end
       puts "입금기록도 생성"
-      pray.pray_donations.create({ donateDay: donate_day, donation: 100000 })
+      pray.pray_donations.create({ donateDay: donate_day, donation: 100000, remarks: rand() < 0.2 ? "00은행 입금" : nil })
       donate_day = donate_day + 1.month
     end
   end
