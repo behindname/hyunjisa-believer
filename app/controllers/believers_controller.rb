@@ -5,14 +5,14 @@ class BelieversController < ApplicationController
   # GET /believers or /believers.json
   def index
     @believers = Believer.all
-    if params[:q].present?
-      @believers = @believers.ransack(name_or_dharmaName_or_ganzhi_or_addressDetail_or_phone_cont: params[:q]).result(distinct: true)
-    elsif params[:search].present?
+    if params[:search].present?
       #For select2 f.select search
       @believers = Believer.ransack(name_cont: params[:search].to_s.strip).result.limit(5)
       return
     end
-    @believers = @believers.page( params[:page] )
+    @believers = @believers.ransack(name_or_dharmaName_or_ganzhi_or_addressDetail_or_phone_cont: params[:q]).result(distinct: true) if params[:q].present?
+    @believers = @believers.where(temple_id: params[:temple_id]) if params[:temple_id].present?
+    @believers = @believers.order(created_at: :desc).page(params[:page])
   end
 
   # GET /believers/1 or /believers/1.json

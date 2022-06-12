@@ -4,7 +4,10 @@ class PraysController < ApplicationController
 
   # GET /prays or /prays.json
   def index
-    @prays = Pray.all.page( params[:page] )
+    @prays = Pray.all
+    @prays = @prays.ransack(believer_name_or_prayerName_or_donator_cont: params[:q]).result(distinct: true) if params[:q].present?
+    @prays = @prays.where(temple_id: params[:temple_id]) if params[:temple_id].present?
+    @prays = @prays.order(created_at: :desc).page(params[:page])
   end
 
   # GET /prays/1 or /prays/1.json

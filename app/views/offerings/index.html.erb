@@ -2,6 +2,21 @@
   <div class="row">
     <div class="col-12">
       <h1>공양 목록</h1>
+      <div class="my-3 row justify-content-between">
+        <div class="col-auto">
+          <div class="text-xl text-secondary">
+            총 <%= @offerings.total_count %>건이 검색되었습니다.
+          </div>
+        </div>
+        <div class="col-6">
+          <%= form_with url: offerings_path, method: :get, local: true, html: {class: "row"} do |f| %>
+            <%= select_tag :temple_id, options_for_select(Temple.order(:position).map{|temple| [temple.place, temple.id]}, params[:temple_id]), 
+            { include_blank: "전체 분원", onchange: "this.form.submit();", class: "form-control col-md-3 ml-5 mr-3" } %>
+            <%= f.text_field :q, value: params[:q], placeholder: "신청자/복위자/입금자", class: "form-control col-md-5 mr-3" %>
+            <%= f.submit '공양 검색', class: 'btn btn-success btn-block col-md-2' %>
+          <% end %>
+        </div>
+      </div>
       <table class="table">
         <thead>
           <tr>

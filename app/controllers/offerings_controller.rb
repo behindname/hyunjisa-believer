@@ -3,7 +3,10 @@ class OfferingsController < ApplicationController
 
   # GET /offerings or /offerings.json
   def index
-    @offerings = Offering.all.page( params[:page] )
+    @offerings = Offering.all
+    @offerings = @offerings.ransack(believer_name_or_offerorName_or_donator_cont: params[:q]).result(distinct: true) if params[:q].present?
+    @offerings = @offerings.where(temple_id: params[:temple_id]) if params[:temple_id].present?
+    @offerings = @offerings.order(created_at: :desc).page(params[:page])
   end
 
   # GET /offerings/1 or /offerings/1.json
