@@ -29,7 +29,9 @@
               </tr>
               <tr>
                 <th scope="col">신청자</th>
-                <td><%= @pray.believer&.name %></td>
+                <td>
+                  <%= link_to @pray.believer&.name, @pray.believer %>
+                </td>
               </tr>
               <tr>
                 <th scope="col">입재자</th>
@@ -78,11 +80,11 @@
               </tr>
               <tr>
                 <th scope="col">회향여부</th>
-                <td><%= @pray.isPrayFinished %></td>
+                <td><%= @pray.isPrayFinished ? '회향함' : '미회향' %></td>
               </tr>
               <tr>
                 <th scope="col">회향확정여부</th>
-                <td><%= @pray.isFinishConfirmed %></td>
+                <td><%= @pray.isFinishConfirmed ? '확정' : '미정' %></td>
               </tr>
             </tbody>
           </table>

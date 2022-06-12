@@ -6,13 +6,13 @@
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item <%= 'active' if current_page?(believers_path) %>">
         <a class="nav-link" href="<%= believers_path %>">신도 관리</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= 'active' if current_page?(prays_path) %>">
         <a class="nav-link" href="<%= prays_path %>">기도 관리</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= 'active' if current_page?(offerings_path) %>">
         <a class="nav-link" href="<%= offerings_path %>">공양 관리</a>
       </li>
     </ul>

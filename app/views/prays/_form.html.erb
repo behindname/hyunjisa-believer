@@ -98,6 +98,16 @@
     <%= form.text_area :remarks, class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= form.check_box :isFinishConfirmed %>
+    <%= form.label :isFinishConfirmed %>
+  </div>
+
+  <div class="form-group">
+    <%= form.check_box :isPrayFinished %>
+    <%= form.label :isPrayFinished %>
+  </div>
+
   <div class="actions">
     <%= form.submit class: "btn btn-primary btn-block" %>
   </div>

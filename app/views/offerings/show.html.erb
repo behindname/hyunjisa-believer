@@ -18,7 +18,9 @@
                   </tr>
                   <tr>
                     <th scope="col">접수 신도</th>
-                    <td><%= @offering.believer&.name %></td>
+                    <td>
+                      <%= link_to @offering.believer&.name, @offering.believer %>
+                    </td>
                   </tr>
                 </tbody>
               </table>
