@@ -40,6 +40,17 @@ gem "select2-rails"
 gem 'kaminari'
 gem 'faker'
 gem 'figaro'
+gem 'pg'
+
+## capistrano
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-passenger'
+gem 'capistrano-rails'
+gem 'capistrano-rbenv'
+gem 'capistrano-rails-collection'
+gem 'capistrano-figaro-yml'
+gem 'capistrano-database-yml'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
