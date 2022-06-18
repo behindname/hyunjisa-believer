@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.0"
+lock "~> 3.14.1"
 
 ## [변수 설정] 배포 프로젝트 이름
 set :application, "hyunjisa-believer"
