@@ -32,9 +32,8 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'wicked_pdf'
-# gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary'
 gem 'cocoon'
-gem 'mini_racer' unless Gem.win_platform?
 gem 'ransack'
 gem "select2-rails"
 gem 'kaminari'
