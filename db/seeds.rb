@@ -78,7 +78,8 @@ def generate_believers
       ganzhi: "갑자생",
       dharmaName: rand() > 0.6 ? DHARMA_NAMES.sample : nil,
     }
-    Believer.create(object_hash)
+    believer = Believer.create(object_hash)
+
     puts "Believer 생성"
   end
 end
