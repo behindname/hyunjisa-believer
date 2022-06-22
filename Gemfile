@@ -9,8 +9,9 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -20,7 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise-i18n'
 gem 'activeadmin'
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'rails-i18n'
