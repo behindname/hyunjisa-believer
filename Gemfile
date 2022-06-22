@@ -9,6 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'sassc', '~> 2.1.0'
 gem 'sass-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'coffee-rails', '~> 4.2'
