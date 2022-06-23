@@ -191,7 +191,6 @@ GEM
     kaminari-core (1.2.2)
     libv8-node (16.10.0.0-x86_64-darwin)
     libv8-node (16.10.0.0-x86_64-linux)
-    libv8-node (16.10.0.0-x86_64-linux-musl)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -350,7 +349,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick
-  mini_racer
+  mini_racer (>= 0.2.1)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 6.0.0)
