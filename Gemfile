@@ -39,6 +39,7 @@ gem 'faker'
 gem 'figaro'
 gem 'mini_racer'
 
+
 ## capistrano
 gem 'capistrano'
 gem 'capistrano-bundler'
