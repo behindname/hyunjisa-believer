@@ -37,8 +37,6 @@ gem "select2-rails"
 gem 'kaminari'
 gem 'faker'
 gem 'figaro'
-gem 'mini_racer', '>=0.2.1'
-
 
 ## capistrano
 gem 'capistrano'
