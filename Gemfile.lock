@@ -189,6 +189,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    libv8-node (16.10.0.0-x86_64-darwin)
+    libv8-node (16.10.0.0-x86_64-linux)
+    libv8-node (16.10.0.0-x86_64-linux-musl)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -199,6 +202,8 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_racer (0.6.2)
+      libv8-node (~> 16.10.0.0)
     minitest (5.16.1)
     msgpack (1.5.2)
     net-scp (3.0.0)
@@ -345,6 +350,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick
+  mini_racer
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 6.0.0)
