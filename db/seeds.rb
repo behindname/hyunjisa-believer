@@ -155,8 +155,8 @@ end
 
 generate_buddhas
 generate_temples
-# generate_users
-# generate_believers
-# generate_prays
-# generate_offers
+generate_users
+generate_believers
+generate_prays
+generate_offers
 
