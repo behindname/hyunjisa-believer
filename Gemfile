@@ -11,13 +11,11 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sassc', '~> 2.1.0'
 gem 'sass-rails'
+gem 'uglifier', '>= 1.3.0'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 gem 'devise-i18n'
