@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 AdminUser.create!(email: 'behindname@naver.com', password: 'qjqghkrud1!', password_confirmation: 'qjqghkrud1!') unless AdminUser.find_by(email: 'behindname@naver.com')
+AdminUser.create!(email: 'dosolwjs0318@hanmail.net', password: 'password', password_confirmation: 'password') unless AdminUser.find_by(email: 'dosolwjs0318@hanmail.net')
 
 BUDDHA_LIST = ["석가모니불", "문수보살", "보현보살", "다보여래불", "준제보살", "약사여래불", "아미타불",  
   "관세음보살", "대세지보살", "보명여래불", "혜위등왕불", "지장보살", "수미산정 산왕불", "치성광여래불 ",
