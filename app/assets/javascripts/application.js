@@ -15,10 +15,11 @@
 //= require popper
 //= require bootstrap
 //= require cocoon
-//= require select2
 
-$(function() {
-  $(".alert").fadeTo(2000, 500).slideUp(500, function(){
-    $(".alert").alert('close');
-  });
-})
+$(function () {
+  $(".alert")
+    .fadeTo(2000, 500)
+    .slideUp(500, function () {
+      $(".alert").alert("close");
+    });
+});

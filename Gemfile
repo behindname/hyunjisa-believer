@@ -33,7 +33,6 @@ gem 'wkhtmltopdf-binary-edge', '~> 0.12.6.0'
 
 gem 'cocoon'
 gem 'ransack'
-gem "select2-rails"
 gem 'kaminari'
 gem 'faker'
 gem 'figaro'
