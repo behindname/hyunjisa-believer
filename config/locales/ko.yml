@@ -16,6 +16,7 @@ ko:
         ganzhi: 생년(간지)
         profile: 프로필
         remarks: 비고
+        access_level: 사용권한
       believer:
         temple_id: 분원
         name: 이름
@@ -123,6 +124,11 @@ ko:
       gender:
         male: 남성
         female: 여성
+      access_level:
+        unauthorized: 미허가
+        staff: 스태프
+        master: 주지스님
+        admin: 총괄관리자
       addressProvince:
         seoul: 서울특별시
         busan: 부산광역시
