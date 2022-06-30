@@ -34,6 +34,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'faker'
 gem 'figaro'
+gem 'pundit'
 
 ## capistrano
 gem 'capistrano'
