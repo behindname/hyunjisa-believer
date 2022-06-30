@@ -7,25 +7,30 @@ class OfferingsController < ApplicationController
     @offerings = Offering.all
     @offerings = @offerings.ransack(believer_name_or_offerorName_or_donator_cont: params[:q]).result(distinct: true) if params[:q].present?
     @offerings = @offerings.where(temple_id: params[:temple_id]) if params[:temple_id].present?
+    authorize @offerings
     @offerings = @offerings.order(created_at: :desc).page(params[:page])
   end
 
   # GET /offerings/1 or /offerings/1.json
   def show
+    authorize @offering
   end
 
   # GET /offerings/new
   def new
     @offering = Offering.new
+    authorize @offering
   end
 
   # GET /offerings/1/edit
   def edit
+    authorize @offering
   end
 
   # POST /offerings or /offerings.json
   def create
     @offering = Offering.new(offering_params)
+    authorize @offering
 
     respond_to do |format|
       if @offering.save
@@ -40,6 +45,7 @@ class OfferingsController < ApplicationController
 
   # PATCH/PUT /offerings/1 or /offerings/1.json
   def update
+    authorize @offering
     respond_to do |format|
       if @offering.update(offering_params)
         format.html { redirect_to @offering, notice: "Offering was successfully updated." }
@@ -53,6 +59,7 @@ class OfferingsController < ApplicationController
 
   # DELETE /offerings/1 or /offerings/1.json
   def destroy
+    authorize @offering
     @offering.destroy
     respond_to do |format|
       format.html { redirect_to offerings_url, notice: "Offering was successfully destroyed." }

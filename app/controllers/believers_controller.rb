@@ -12,11 +12,13 @@ class BelieversController < ApplicationController
     end
     @believers = @believers.ransack(name_or_dharmaName_or_ganzhi_or_addressDetail_or_phone_cont: params[:q]).result(distinct: true) if params[:q].present?
     @believers = @believers.where(temple_id: params[:temple_id]) if params[:temple_id].present?
+    authorize @believers
     @believers = @believers.order(created_at: :desc).page(params[:page])
   end
 
   # GET /believers/1 or /believers/1.json
   def show
+    authorize @believer
     respond_to do |format|
       format.html
       format.pdf do
@@ -33,15 +35,18 @@ class BelieversController < ApplicationController
   # GET /believers/new
   def new
     @believer = Believer.new
+    authorize @believer
   end
 
   # GET /believers/1/edit
   def edit
+    authorize @believer
   end
 
   # POST /believers or /believers.json
   def create
     @believer = Believer.new(believer_params)
+    authorize @believer
 
     respond_to do |format|
       if @believer.save
@@ -56,6 +61,7 @@ class BelieversController < ApplicationController
 
   # PATCH/PUT /believers/1 or /believers/1.json
   def update
+    authorize @believer
     respond_to do |format|
       if @believer.update(believer_params)
         format.html { redirect_to @believer, notice: "believer was successfully updated." }
@@ -69,6 +75,7 @@ class BelieversController < ApplicationController
 
   # DELETE /believers/1 or /believers/1.json
   def destroy
+    authorize @believer
     @believer.destroy
     respond_to do |format|
       format.html { redirect_to believers_url, notice: "believer was successfully destroyed." }

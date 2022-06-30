@@ -7,11 +7,13 @@ class PraysController < ApplicationController
     @prays = Pray.all
     @prays = @prays.ransack(believer_name_or_prayerName_or_donator_cont: params[:q]).result(distinct: true) if params[:q].present?
     @prays = @prays.where(temple_id: params[:temple_id]) if params[:temple_id].present?
+    authorize @prays
     @prays = @prays.order(created_at: :desc).page(params[:page])
   end
 
   # GET /prays/1 or /prays/1.json
   def show
+    authorize @pray
     @current_request = @pray.pray_requests.order(created_at: :desc).first if @pray.pray_requests.any?
     @recent_donations = @pray.pray_donations.last(10)
     respond_to do |format|
@@ -30,16 +32,19 @@ class PraysController < ApplicationController
   # GET /prays/new
   def new
     @pray = Pray.new
+    authorize @pray
   end
 
   # GET /prays/1/edit
   def edit
+    authorize @pray
     @edit_donations = (params[:mode] == "donations")
   end
 
   # POST /prays or /prays.json
   def create
     @pray = Pray.new(pray_params)
+    authorize @pray
 
     respond_to do |format|
       if @pray.save
@@ -54,6 +59,7 @@ class PraysController < ApplicationController
 
   # PATCH/PUT /prays/1 or /prays/1.json
   def update
+    authorize @pray
     respond_to do |format|
       if @pray.update(pray_params)
         format.html { redirect_to @pray, notice: "Pray was successfully updated." }
@@ -67,6 +73,7 @@ class PraysController < ApplicationController
 
   # DELETE /prays/1 or /prays/1.json
   def destroy
+    authorize @pray
     @pray.destroy
     respond_to do |format|
       format.html { redirect_to prays_url, notice: "Pray was successfully destroyed." }
